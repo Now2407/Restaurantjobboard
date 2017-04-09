@@ -1,0 +1,28 @@
+<html>
+    <head><title></title></head>
+<body>
+	
+<input type="text" id="search" placeholder="search">
+
+<div id="output"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+$("#search").keyup(function(){
+	var term = $("#search").val();
+$.post('http://localhost:3000/', { term: term }, 
+    function(data){
+    	$("#output").html(data);
+    });
+   });
+});
+
+
+</script>
+
+</body>
+</html>
